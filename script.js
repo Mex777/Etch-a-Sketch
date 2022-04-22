@@ -23,14 +23,14 @@ const makeGrid = (size) => {
   }
 };
 
-makeGrid(50);
+makeGrid(16);
 
 const reset = () => {
   const rows = grid.childNodes;
   Array.from(rows).forEach((node) => grid.removeChild(node));
-  let size = prompt('Size', 'A value between 1 and 100');
+  let size = Number(prompt('Size', 'A value between 1 and 100'));
   while (size < 1 || size > 100) {
-    size = prompt('Size', 'A value between 1 and 100');
+    size = Number(prompt('Size', 'A value between 1 and 100'));
   }
   makeGrid(size);
 };
